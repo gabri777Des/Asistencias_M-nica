@@ -1,4 +1,4 @@
-package com.example.ESFE.Asistencias.controladores;
+package com.example.ESFE.Asistencias.Controladores;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
