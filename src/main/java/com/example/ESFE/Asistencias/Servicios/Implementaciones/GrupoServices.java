@@ -14,6 +14,7 @@ import java.util.Optional;
 @Service
 public class GrupoServices implements IGrupoServices {
 
+
     @Autowired
     private IGrupoRepository grupoRepository;
 
@@ -33,9 +34,7 @@ public class GrupoServices implements IGrupoServices {
     }
 
     @Override
-    public Grupo CrearOeditar(Grupo grupo) {
-        return grupoRepository.save(grupo);
-    }
+    public Grupo CrearOeditar(Grupo grupo) { return grupoRepository.save(grupo); }
 
     @Override
     public void EliminarPorId(Integer id) {
