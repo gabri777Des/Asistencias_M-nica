@@ -1,0 +1,43 @@
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainlayout"
+      xmlns:th="http://www.thymeleaf.org">
+
+<div layout:fragment="content">
+    <h1>Listado de asignaciones Docente-Grupo</h1>
+    <a th:href="@{/DocentesGrupos/create}" class="btn btn-outline-primary">Nueva asignacion</a>
+    <table class ="table table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Docente</th>
+            <th>Grupo</th>
+            <th>Año</th>
+            <th>Ciclo</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item : ${docenteGrupo}">
+            <td th:text="${item.id}" ></td>
+            <td th:text="${item.docente.nombre} + ' ' + ${item.docente.apellido}" ></td>
+            <td th:text="${item.grupo.nombre}" ></td>
+            <td th:text="${item.anio}" ></td>
+            <td th:text="${item.ciclo}" ></td>
+            <td>
+                <a th:href="@{/DocentesGrupos/details/{id} (id = ${item.id} )}" class="btn btn-outline-secondary">Detalles</a>
+                <a th:href="@{/DocentesGrupos/edit/{id} (id = ${item.id} )}" class="btn btn-outline-info">Editar</a>
+                <a th:href="@{/DocentesGrupos/remove/{id} (id = ${item.id} )}" class="btn btn-outline-danger">Eliminar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <nav class="page navegation example">
+        <ul class="pagination">
+            <li class="page-item" th:each="pageNumber : ${pageNumbers}">
+                <a class="page-link" th:href="@{|/DocentesGrupos?page=${pageNumber}|}" th:text="${pageNumber}"></a>
+            </li>
+        </ul>
+    </nav>
+</div>
+</html>
