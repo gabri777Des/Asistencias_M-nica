@@ -1,7 +1,6 @@
 package com.example.ESFE.Asistencias.Servicios.Interfaces;
 
 import com.example.ESFE.Asistencias.Entidades.Docente;
-import com.example.ESFE.Asistencias.Entidades.Grupo;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
